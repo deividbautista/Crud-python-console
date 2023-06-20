@@ -7,7 +7,7 @@
 # Código sustraido del canal: UskoKruM2010 / link-video: https://youtu.be/d3mYv1r4DkQ 
 # link-repositorio: https://github.com/UskoKruM/app_consola_crud_python_mysql
 
-# En este primer apartado realizamos la importación de las funciones que utilizaremos a lo largo del código
+# En este primer apartado realizamos la importación de las funciones que utilizaremos a lo largo del código.
 from BD.conexion import DAO
 import funciones
 
@@ -100,4 +100,5 @@ def ejecutarOpcion(opcion):
     else:
         print("Opción no valida papu")
 
+# Retornamos el menu principal despues de realizar la función requerida por elusuario, para mantener el bucle.
 menuPrincipal()
