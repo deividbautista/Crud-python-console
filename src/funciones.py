@@ -11,8 +11,15 @@
 # Función para listar he imprimir todos los cursos de la base de datos.
 #-----------------------------------------------------
 def listarCursos(cursos):
+
+    # Imprimimos todos los cursos en la consola.
     print("Cursos: ")
+
+    # Definimos el contador que mantendra en funcionamiento el ciclo for.
     contador = 1
+
+    # Definimos el ciclo for el cual recorrera la cantidad de datos insertados en la base de datos, 
+    # y a su vez se ira imprimiendo los datos en la pantalla.
     for cur in cursos:
         datos = "{0} | Codigo: {1} | Nombre: {2} ({3} Créditos)"
         print(datos.format(contador, cur[0], cur[1], cur [2]))

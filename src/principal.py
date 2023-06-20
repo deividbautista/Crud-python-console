@@ -48,7 +48,6 @@ def ejecutarOpcion(opcion):
 
     # Primera opción donde se enlistan e imprimen todos los cursos presentes en la base de datos.
     if opcion == 1:
-        print("----------_----------")
         try:
             cursos = dao.listarCursos()
             if len(cursos) > 0:
