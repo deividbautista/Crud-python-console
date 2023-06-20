@@ -6,12 +6,6 @@ In this repository we will see reflected the development of a CRUD matrix with P
 * pip [pip download](https://pip.pypa.io/en/stable/installation/)
 ---
 
-
-```sh
-# Clonar el repositorio
-git clone https://github.com/deividbautista/Graphs_in_python.git
-```
-
 ```sh
 # Instalar las dependencias que necesitaremos en este proyecto
 pip install -r dependencies.txt 
