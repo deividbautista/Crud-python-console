@@ -1,7 +1,19 @@
 
+#------------------------------------------------------------------------------------
+# El presente código posee la finalidad de aprender y practicar conocimientos intermedios 
+# del lenguaje de programación python y en ningún momento se pretende monetizar o hacer apropiación del trabajo del autor original.
+#------------------------------------------------------------------------------------
+
+# Código sustraido del canal: UskoKruM2010 / link-video: https://youtu.be/d3mYv1r4DkQ 
+# link-repositorio: https://github.com/UskoKruM/app_consola_crud_python_mysql
+
+# En este primer apartado realizamos la importación de las funciones que utilizaremos a lo largo del código
 from BD.conexion import DAO
 import funciones
 
+#-----------------------------------------------------
+# Apartado de menú principal.
+#-----------------------------------------------------
 def menuPrincipal():
     continuar = True 
     while(continuar):
@@ -26,8 +38,15 @@ def menuPrincipal():
                 opcionCorrecta = True
                 ejecutarOpcion(opcion)
 
+#-----------------------------------------------------
+# Apartado donde se encontraran las distintas funcionalidades de la matriz CRUD.
+#-----------------------------------------------------
 def ejecutarOpcion(opcion):
+
+    # Vairable principal que guarda la conexión de la base de datos.
     dao = DAO()
+
+    # Primera opción donde se enlistan e imprimen todos los cursos presentes en la base de datos.
     if opcion == 1:
         print("----------_----------")
         try:
@@ -38,12 +57,16 @@ def ejecutarOpcion(opcion):
                 print("No se encontraron cursos...")
         except:
             print("Ha ocurrido un ERNO...")
+    
+    # Segunda opción donde se realizara registro de un nuevo curso con datos expedidos por el usuario.
     elif opcion == 2:
         curso = funciones.pedirDatosRegistro()
         try:
             dao.registrarCurso(curso)
         except:
             print("Ha ocurrido un ERNO...")
+
+    # Tercera opción en la que se actualizaran los atributos del curso seleccionado con datos expedidos por el usuario.
     elif opcion == 3:
         try:
             cursos = dao.listarCursos()
@@ -58,6 +81,7 @@ def ejecutarOpcion(opcion):
         except:
             print("Ha ocurrido un ERNO...")
 
+    # Cuarta opción la cual eliminara el curso seleccionado por medio del numero del codigo de este.
     elif opcion == 4:
         try:
             cursos = dao.listarCursos()
