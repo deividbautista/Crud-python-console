@@ -32,11 +32,14 @@ def listarCursos(cursos):
 def pedirDatosRegistro():
     codigoCorrecto = False
     while(not codigoCorrecto):
-        codigo=input("Ingrese codigo: ")
-        if len(codigo) == 6:
-            codigoCorrecto = True
+        codigo = input("Ingrese codigo: ")
+        if codigo.isnumeric():
+            if len(codigo) == 6:
+                codigoCorrecto = True
+            else:
+                print("Código incorrecto: Debe tener 6 digitos.")
         else:
-            print("Código incorrecto: Debe tener 6 digitos.")
+            print("Código incorrecto, por favor digite un valor numérico.")
 
     nombre=input("Ingrese nombre: ")
     creditosCorrecto = False
@@ -49,7 +52,7 @@ def pedirDatosRegistro():
             else:
                 print("Los créditos deben de ser mayor a 0.")
         else:
-            print("Créditos incorrectos: Debe se ser un valor númerico, no se permiten caracteres, decimales o negativos.")
+            print("Créditos incorrectos: Debe se ser un valor numérico, no se permiten caracteres, decimales o negativos.")
 
     curso = (codigo, nombre, creditos)
     return curso
